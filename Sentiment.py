@@ -58,9 +58,9 @@ class listener(StreamListener):
         global initime
         t=int(calctime(initime))
         all_data=json.loads(data)
-        #print(type(all_data['text']))
+
         tweet=all_data["text"]
-        #username=all_data["user"]["screen_name"]
+
         tweet=" ".join(re.findall("[a-zA-Z]+", tweet))
         blob=TextBlob(tweet.strip())
 
@@ -78,11 +78,9 @@ class listener(StreamListener):
             else:
                 negative=negative+sen.sentiment.polarity  
         compound=compound+senti        
-        #print (count,end='')
+        
         print ('#'+str(count) + ":"+ tweet.strip())
-        #print (senti)
-        #print (t)
-        #print (str(positive) + ' ' + str(negative) + ' ' + str(compound) )
+
         
     
         plt.axis([ 0, 200, -20,20])
