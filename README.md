@@ -9,3 +9,7 @@ Prerequisites :
 Create an application [here](https://apps.twitter.com/app/new) and get the `consumer key`, `consumer token`, `access token` and `access key` to pass.
 
 Clone the repo and run `python3 Sentiment.py` to execute.
+
+Tracking :
+
+![tracking-trends](https://github.com/srdg/tweety-sentiment/blob/master/trend-tracking.gif)
