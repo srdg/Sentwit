@@ -12,4 +12,4 @@ Clone the repo and run `python3 Sentiment.py` to execute.
 
 Tracking :
 
-![tracking-trends](https://github.com/srdg/tweety-sentiment/blob/master/trend-tracking.gif)
+![trends](https://github.com/srdg/tweety-sentiment/blob/master/trends.gif)
