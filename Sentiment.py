@@ -11,7 +11,6 @@ auth.set_access_token(atoken, asecret)
 
 api = tweepy.API(auth)
 
-count = 100
 
 class StreamListener(tweepy.StreamListener):
 
