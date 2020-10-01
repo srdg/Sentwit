@@ -12,9 +12,10 @@ auth.set_access_token(atoken, asecret)
 api = tweepy.API(auth)
 data=pd.DataFrame([{'Happy':0.0,'Angry':0.0,'Surprise':0.0,'Sad':0.0,'Fear':0.0}])
 
-st.title("Sentweet")
-
+st.title("Sentwit")
+st.subheader("Find out how the twitterati is feeling about a particular trend")
 chart=st.line_chart(data)
+st.text("Enter the keyword you want to track the emotions on, and hit enter! As simple as that :)")
 
 class StreamListener(tweepy.StreamListener):
 
