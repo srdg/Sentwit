@@ -5,7 +5,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import time
-
+import os
+ckey,csecret,atoken,asecret = os.environ.get('ckey'),os.environ.get('csecret'),os.environ.get('atoken'),os.environ.get('asecret')
 auth = tweepy.OAuthHandler(ckey, csecret)
 auth.set_access_token(atoken, asecret)
 api = tweepy.API(auth)
