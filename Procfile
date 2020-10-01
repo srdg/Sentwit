@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run Sentweet.py
+web:sh setup.sh && streamlit run Sentweet.py
