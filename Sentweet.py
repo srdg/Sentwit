@@ -10,7 +10,8 @@ auth = tweepy.OAuthHandler(ckey, csecret)
 auth.set_access_token(atoken, asecret)
 
 api = tweepy.API(auth)
-
+data=pd.DataFrame([{'Happy':0.0,'Angry':0.0,'Surprise':0.0,'Sad':0.0,'Fear':0.0}])
+chart=st.line_chart(data)
 
 class StreamListener(tweepy.StreamListener):
 
@@ -23,7 +24,11 @@ class StreamListener(tweepy.StreamListener):
         if (time.time() - self.start_time) < self.time_limit:
             print(status.text)
             print("***************************Emotions detected******************************************")
-            print(get_emotion(status.text))
+            data_dict=get_emotion(status.text)
+            data_dict={k:float(v) for k,v in data_dict.items()}
+            data=pd.DataFrame([data_dict])
+            chart.add_rows(data)
+            print(data_dict)
             return True
         else:
             return False
