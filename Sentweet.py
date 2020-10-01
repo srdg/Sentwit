@@ -38,5 +38,5 @@ class StreamListener(tweepy.StreamListener):
 
 listener = StreamListener()
 stream = tweepy.Stream(auth = api.auth, listener=listener)
-user_input = st.text_input("Track")
+user_input = st.text_input("Track", "Made with love")
 stream.filter(track=[user_input])
