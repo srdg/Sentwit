@@ -8,9 +8,11 @@ import time
 
 auth = tweepy.OAuthHandler(ckey, csecret)
 auth.set_access_token(atoken, asecret)
-
 api = tweepy.API(auth)
 data=pd.DataFrame([{'Happy':0.0,'Angry':0.0,'Surprise':0.0,'Sad':0.0,'Fear':0.0}])
+
+st.title("Sentweet")
+
 chart=st.line_chart(data)
 
 class StreamListener(tweepy.StreamListener):
@@ -35,5 +37,5 @@ class StreamListener(tweepy.StreamListener):
 
 listener = StreamListener()
 stream = tweepy.Stream(auth = api.auth, listener=listener)
-
-stream.filter(track=['Presidential Debate'])
+user_input = st.text_input("Track")
+stream.filter(track=[user_input])
